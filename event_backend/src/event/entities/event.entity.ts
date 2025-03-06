@@ -14,6 +14,10 @@ export class Event {
   name: string;
 
   @Field()
+  @Column({ default: 'Available' }) 
+  status: string;
+
+  @Field()
   @Column()
   date: Date;
 

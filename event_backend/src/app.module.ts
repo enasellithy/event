@@ -8,8 +8,6 @@ import { Event } from './event/entities/event.entity';
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({

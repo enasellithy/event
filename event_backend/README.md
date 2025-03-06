@@ -3,6 +3,23 @@
 - node
 - npm 
 
+## cd event_backend
+## npm install
+## cp env .env 
+
+- change  your database connection in .env
+./src/app.module.ts
+```bash
+host: process.env.DB_HOST,
+      port: 3306,
+      username: 'root',
+      password: process.env.DB_PASSWORD,
+      database: 'event_ticketing',
+```
+
+## npm run build
+## npm run start
+
 #database 
 
 CREATE TABLE `event` (
@@ -10,6 +27,7 @@ CREATE TABLE `event` (
  `name` varchar(255) NOT NULL,
  `date` datetime NOT NULL,
  `ticketsAvailable` int(11) NOT NULL,
+ `status` ENUM('Available','Sold Out') NOT NULL DEFAULT 'Available'
  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 
@@ -24,7 +42,9 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 
 
-INSERT INTO `event`( `name`, `date`, `ticketsAvailable`) VALUES ('test','2025-3-25',100)
+INSERT INTO `event`( `name`, `date`, `ticketsAvailable`) VALUES ('event 1','2025-3-25',100);
+INSERT INTO `event`( `name`, `date`, `ticketsAvailable`) VALUES ('event 2','2025-3-25',75);
+INSERT INTO `event`( `name`, `date`, `ticketsAvailable`) VALUES ('event 3','2025-3-25',20);
 
 
 ## GETWAY
