@@ -1,10 +1,16 @@
-##Installation
+## Installation
 
 - node
 - npm 
+- docker if will run through docker
+
+## Docker Deploy
+- docker build -t nestjs-app .
+- docker run -p 3000:3000 --env-file .env nestjs-app
+- docker-compose up --build
 
 ## cd event_backend
-## npm install
+## npm install --legacy-peer-deps
 ## cp env .env 
 
 - change  your database connection in .env

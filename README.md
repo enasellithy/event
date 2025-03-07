@@ -4,9 +4,24 @@
 
 -in every folder there is a README.md file  show how installation and running 
 
+Every File Have Docker file to deploy 
+
+
 ## Requirements 
 - node
 - npm 
+- Docker if will run through docker
+
+## Docker Deploy Backend 
+- cd event_backend
+- docker build -t nestjs-app .
+- docker run -p 3000:3000 --env-file .env nestjs-app
+- docker-compose up --build
+
+## Docker Deploy Frontend 
+- cd event_frontend
+- docker build -t react-native-app .
+- docker run -p 9001:9001 react-native-app
 
 
 ## Installation
